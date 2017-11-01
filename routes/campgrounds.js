@@ -50,7 +50,7 @@ router.post('/', middleware.isLoggedIn, function(req,res){
                 console.log(err);
             } else {
                 //redirect back to campgrounds page
-                console.log(newlyCreated);
+                // console.log(newlyCreated);
                 res.redirect("/campgrounds");
             }
         });
