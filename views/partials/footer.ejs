@@ -1,0 +1,26 @@
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        
+        <script type="text/javascript">
+        $(document).ready(function(){
+            $('.star-rating').on("click", "span", function (event) {
+                var idx = $(this).attr("id").substr(-1);
+                idx = parseInt(idx);
+                
+                for(var i = 1; i<= 5; i++){
+                    var idName = "#rate-".concat(i);
+                    if(i <= idx){
+                        $(idName).removeClass("glyphicon-star-empty");
+                        $(idName).addClass("glyphicon-star");                        
+                    }else{
+                        $(idName).removeClass("glyphicon-star");
+                        $(idName).addClass("glyphicon-star-empty");                        
+                    }
+                    $( "input[name='comment[rating]']" ).val(idx);
+                }
+            });
+        });
+        </script>
+        
+    </body>
+</html>
